@@ -43,7 +43,7 @@ req.on('error', function(e) {
   console.log('problem with request: ' + e.message);
 });
 // write data to request body
-req.write('{"value1":speech}');
+req.write('{"value1": + speech}');
 req.end();
 
 
