@@ -8,9 +8,9 @@ const restService = express();
 //biju
 var http = require("https");
 var options = {
-  hostname: 'https://requestb.in',
+  hostname: 'requestb.in/13pybjs1',
   port: 80,
-  path: '/13pybjs1',
+  //path: '/13pybjs1',
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
@@ -42,8 +42,8 @@ restService.use(bodyParser.json());
 restService.post('/echo', function(req, res) {
     var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     return res.json({
-        speech: "ga ggg speech",
-        displayText: "goo ggg speech",
+        speech: speech,
+        displayText: speech,
         source: 'webhook-echo-sample'
     });
 });
