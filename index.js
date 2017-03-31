@@ -4,8 +4,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
 
-//biju
-var request = require('request');
 
 //biju
 var http = require("http");
