@@ -5,6 +5,21 @@ const bodyParser = require('body-parser');
 const restService = express();
 
 
+restService.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+restService.use(bodyParser.json());
+
+restService.post('/echo', function(req, res) {
+    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
+    return res.json({
+        speech: "Okay, I will remind biju",
+        displayText: "Okay, I will remind biju to",
+        source: 'webhook-echo-sample'
+    });
+});
+
 //biju
 var http = require("http");
 var options = {
@@ -28,25 +43,11 @@ req.on('error', function(e) {
   console.log('problem with request: ' + e.message);
 });
 // write data to request body
-req.write('{"value1": "Create a meeting with John tomorrow morning"}');
+req.write('{"value1": speech}');
 req.end();
 
 
 //originalbelow
-restService.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-restService.use(bodyParser.json());
-
-restService.post('/echo', function(req, res) {
-    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
-    return res.json({
-        speech: "Okay, I will remind biju to", speech,
-        displayText: speech,
-        source: 'webhook-echo-sample'
-    });
-});
 
 /*restService.post('/slack-test', function(req, res) {
 
