@@ -14,7 +14,7 @@ restService.use(bodyParser.json());
 restService.post('/echo', function(req, res) {
     var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     return res.json({
-        speech: speech && "Okay, I will remind biju",
+        speech: "Okay, I will remind biju",
         displayText: "Okay, I will remind biju to",
         source: 'webhook-echo-sample'
     });
@@ -43,7 +43,7 @@ req.on('error', function(e) {
   console.log('problem with request: ' + e.message);
 });
 // write data to request body
-req.write('{"value1":"keep milk in the fridge tomorrow morning"}');
+req.write('{"value1":speech}');
 req.end();
 
 
