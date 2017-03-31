@@ -6,7 +6,7 @@ const restService = express();
 
 
 //biju
-var http = require("http");
+var http = require("https");
 var options = {
   hostname: 'requestb.in',
   port: 80,
@@ -42,8 +42,8 @@ restService.use(bodyParser.json());
 restService.post('/echo', function(req, res) {
     var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     return res.json({
-        speech: "ga bbb speech",
-        displayText: "goo bbb speech",
+        speech: "ga ggg speech",
+        displayText: "goo ggg speech",
         source: 'webhook-echo-sample'
     });
 });
