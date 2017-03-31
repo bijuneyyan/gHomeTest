@@ -28,7 +28,7 @@ req.on('error', function(e) {
   console.log('problem with request: ' + e.message);
 });
 // write data to request body
-req.write('{"string": "Hello, World"}');
+req.write('{"string": "Hey, There"}');
 req.end();
 
 
