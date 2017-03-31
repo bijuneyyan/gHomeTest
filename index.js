@@ -6,11 +6,11 @@ const restService = express();
 
 
 //biju
-var http = require("https");
+var http = require("http");
 var options = {
-  hostname: 'requestb.in/13pybjs1',
+  hostname: 'putsreq.com',
   port: 80,
-  //path: '/13pybjs1',
+  path: '/UIJt9XjbJ6KOoGHTffCG',
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
