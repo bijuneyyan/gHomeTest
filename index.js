@@ -8,9 +8,9 @@ const restService = express();
 //biju
 var http = require("http");
 var options = {
-  hostname: 'putsreq.com',
+  hostname: 'maker.ifttt.com',
   port: 80,
-  path: '/UIJt9XjbJ6KOoGHTffCG',
+  path: '/trigger/dothis/with/key/bXsYfDIonvvqd2ltTsBgiH',
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ req.on('error', function(e) {
   console.log('problem with request: ' + e.message);
 });
 // write data to request body
-req.write('{"string": "Hey, There"}');
+req.write('{"value1": "Create a meeting with John tomorrow morning"}');
 req.end();
 
 
