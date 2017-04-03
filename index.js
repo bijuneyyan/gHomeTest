@@ -36,7 +36,7 @@ var req = http.request(options, function(res) {
   console.log('Headers: ' + JSON.stringify(res.headers));
   res.setEncoding('utf8');
   res.on('data', function (body) {
-    console.log('Body: ' + body);
+    console.log('Body: ' + body );
   });
 });
 req.on('error', function(e) {
@@ -44,6 +44,17 @@ req.on('error', function(e) {
 });
 // write data to request body
 req.write('{"value1":"');
+
+//biju is trying something below
+
+restService.post('/echo', function(req, res) {
+    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
+    req.write(+ speech);
+});
+
+//biju is trying something above
+
+
 req.write('content');
 req.write('"}');
 req.end();
