@@ -44,18 +44,7 @@ req.on('error', function(e) {
 });
 // write data to request body
 req.write('{"value1":"');
-
-//biju is trying something below
-
-restService.post('/echo', function(req, res) {
-    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
-    req.write(+ speech);
-});
-
-//biju is trying something above
-
-
-req.write('content');
+req.write('what i said');
 req.write('"}');
 req.end();
 
