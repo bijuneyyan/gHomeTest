@@ -18,7 +18,7 @@ restService.post('/echo', function(req, res) {
         displayText: "Okay, I will remind biju to " + speech + ", Noted", //Biju added +speech part
         source: 'webhook-echo-sample'
     });
-});
+//}); biju moved this to end
 
 //biju
 var http = require("http");
@@ -44,10 +44,11 @@ req.on('error', function(e) {
 });
 // write data to request body
 req.write('{"value1":"');
-req.write('drink water at 8pm');
+req.write('speech');
 req.write('"}');
 req.end();
 
+}); //biju added this here
 
 //originalbelow
 
