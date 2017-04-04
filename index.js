@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
+var speech; //biju added
 
 restService.use(bodyParser.urlencoded({
     extended: true
@@ -43,11 +44,10 @@ req.on('error', function(e) {
 });
 // write data to request body
 req.write('{"value1":"');
-req.write('Hoo');
+req.write('speech\n');
 req.write('"}');
 req.end();
 
-//}); //biju had added this here. now commented
 
 //originalbelow
 
