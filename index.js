@@ -37,8 +37,8 @@ var post_req = http.request(options, function(post_res) {
   console.log('Status: ' + post_res.statusCode);
   console.log('Headers: ' + JSON.stringify(post_res.headers));
   post_res.setEncoding('utf8');
-  post_res.on('data', function (body) {
-    console.log('Body: ' + body );
+  post_res.on('data', function (post_body) {
+    console.log('Body: ' + post_body );
   });
 });
 post_req.on('error', function(e) {
