@@ -30,11 +30,11 @@ var options = {
       'Content-Type': 'application/json',
   }
 };
-var post_req = http.request(options, function(res) {
-  console.log('Status: ' + res.statusCode);
-  console.log('Headers: ' + JSON.stringify(res.headers));
-  res.setEncoding('utf8');
-  res.on('data', function (body) {
+var post_req = http.request(options, function(post_res) {
+  console.log('Status: ' + post_res.statusCode);
+  console.log('Headers: ' + JSON.stringify(post_res.headers));
+  post_res.setEncoding('utf8');
+  post_res.on('data', function (body) {
     console.log('Body: ' + body );
   });
 });
