@@ -3,7 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
-var speech = "somethnig";
+var speech = "somethnig"; //Biju added this trying to make global variable
 
 
 restService.use(bodyParser.urlencoded({
@@ -46,7 +46,7 @@ req.on('error', function(e) {
 });
 // write data to request body
 req.write('{"value1":"');
-req.write( global.speech);
+req.write('Hoo'); //biju added this in reference to the top global variable
 req.write('"}');
 req.end();
 
