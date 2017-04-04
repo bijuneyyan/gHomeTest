@@ -16,10 +16,10 @@ restService.post('/echo', function(req, res) {
         speech: "Okay, I will try and remind biju to " + speech + ", Noted",
         displayText: "Okay, I will remind biju to " + speech + ", Noted", //Biju added +speech part
         source: 'webhook-echo-sample'
-    });    
-});
-
-    //biju
+    });   
+    
+    
+        //biju
 var http = require("http");
 var options = {
   hostname: 'maker.ifttt.com',
@@ -49,6 +49,10 @@ post_req.write('"}');
 post_req.end();
     
     //biju added end
+    
+});
+
+
 
 
 //originalbelow
