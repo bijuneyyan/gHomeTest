@@ -42,9 +42,10 @@ var req = http.request(options, function(res) {
 req.on('error', function(e) {
   console.log('problem with request: ' + e.message);
 });
+
 // write data to request body
 req.write('{"value1":"');
-req.write(speech);
+req.write( ' + speech ');
 req.write('"}');
 req.end();
 
