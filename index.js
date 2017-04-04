@@ -3,8 +3,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
-var speech = "somethnig"; //Biju added this trying to make global variable
-
 
 restService.use(bodyParser.urlencoded({
     extended: true
@@ -14,13 +12,12 @@ restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
     var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
-    global.name = speech //biju added this here
     return res.json({
         speech: "Okay, I will try and remind biju to " + speech + ", Noted",
         displayText: "Okay, I will remind biju to " + speech + ", Noted", //Biju added +speech part
         source: 'webhook-echo-sample'
     });
-}); // biju had moved this to end
+});
 
 //biju
 var http = require("http");
@@ -46,7 +43,7 @@ req.on('error', function(e) {
 });
 // write data to request body
 req.write('{"value1":"');
-req.write('Hoo'); //biju added this in reference to the top global variable
+req.write('Hoo');
 req.write('"}');
 req.end();
 
