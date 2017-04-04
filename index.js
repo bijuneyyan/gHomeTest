@@ -5,6 +5,13 @@ const bodyParser = require('body-parser');
 const restService = express();
 var speech; //biju added
 
+//biju added start
+var postData = querystring.stringify({
+  'value1' : 'Hello World!'
+});
+//biju added end
+
+
 restService.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -45,7 +52,7 @@ req.on('error', function(e) {
 
 // write data to request body
 req.write('{"value1":"');
-req.write( ' + speech ');
+req.write(postData);
 req.write('"}');
 req.end();
 
