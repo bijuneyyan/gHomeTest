@@ -19,7 +19,10 @@ restService.post('/echo', function(req, res) {
     });   
     
     
-        //biju
+    
+});
+
+    //biju
 var http = require("http");
 var options = {
   hostname: 'maker.ifttt.com',
@@ -44,15 +47,12 @@ post_req.on('error', function(e) {
 
 // write data to request body
 post_req.write('{"value1":"');
-post_req.write(speech);
+post_req.write('speech');
 post_req.write('"}');
 post_req.end();
     
     //biju added end
     
-});
-
-
 
 
 //originalbelow
