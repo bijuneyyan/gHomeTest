@@ -30,7 +30,7 @@ var options = {
       'Content-Type': 'application/json',
   }
 };
-var req = http.request(options, function(res) {
+var post_req = http.request(options, function(res) {
   console.log('Status: ' + res.statusCode);
   console.log('Headers: ' + JSON.stringify(res.headers));
   res.setEncoding('utf8');
@@ -38,15 +38,15 @@ var req = http.request(options, function(res) {
     console.log('Body: ' + body );
   });
 });
-req.on('error', function(e) {
+post_req.on('error', function(e) {
   console.log('problem with request: ' + e.message);
 });
 
 // write data to request body
-req.write('{"value1":"');
-req.write(speech);
-req.write('"}');
-req.end();
+post_req.write('{"value1":"');
+post_req.write('speech');
+post_req.write('"}');
+post_req.end();
     
     //biju added end
 
