@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
+var speech = "somethnig";
 
 
 restService.use(bodyParser.urlencoded({
@@ -45,7 +46,7 @@ req.on('error', function(e) {
 });
 // write data to request body
 req.write('{"value1":"');
-req.write('content');
+req.write( global.speech);
 req.write('"}');
 req.end();
 
