@@ -3,7 +3,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
-var speech; //biju added
 
 restService.use(bodyParser.urlencoded({
     extended: true
@@ -17,8 +16,9 @@ restService.post('/echo', function(req, res) {
         speech: "Okay, I will try and remind biju to " + speech + ", Noted",
         displayText: "Okay, I will remind biju to " + speech + ", Noted", //Biju added +speech part
         source: 'webhook-echo-sample'
-    });
-    
+    });    
+});
+
     //biju
 var http = require("http");
 var options = {
@@ -49,10 +49,6 @@ req.write('"}');
 req.end();
     
     //biju added end
-    
-});
-
-
 
 
 //originalbelow
