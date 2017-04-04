@@ -18,9 +18,8 @@ restService.post('/echo', function(req, res) {
         displayText: "Okay, I will remind biju to " + speech + ", Noted", //Biju added +speech part
         source: 'webhook-echo-sample'
     });
-});
-
-//biju
+    
+    //biju
 var http = require("http");
 var options = {
   hostname: 'maker.ifttt.com',
@@ -45,9 +44,15 @@ req.on('error', function(e) {
 
 // write data to request body
 req.write('{"value1":"');
-req.write('postData');
+req.write(speech);
 req.write('"}');
 req.end();
+    
+    //biju added end
+    
+});
+
+
 
 
 //originalbelow
