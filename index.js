@@ -46,8 +46,8 @@ post_req.end();
     
     
     return res.json({
-        speech: "Okay, I will try and remind biju to " + speech + ", Anything else?",
-        displayText: "Okay, I will remind biju to " + speech + ", Anything else?", //Biju added +speech part
+        speech: "Okay, I will try and remind biju to " + speech + ". Anything else?",
+        displayText: "Okay, I will remind biju to " + speech + ". Anything else?", //Biju added +speech part
         source: 'webhook-echo-sample'
     });   
     
