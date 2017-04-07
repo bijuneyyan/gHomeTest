@@ -8,6 +8,7 @@ restService.use(bodyParser.urlencoded({
     extended: true
 }));
 
+
 restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
