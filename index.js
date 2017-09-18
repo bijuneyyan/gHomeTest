@@ -18,7 +18,7 @@ var http = require("http");
 var options = {
   hostname: 'maker.ifttt.com',
   port: 80,
-  path: '/trigger/dothis/with/key/bXsYfDIonvvqd2ltTsBgiH',
+  path: '/trigger/dothis/with/key/bX4ry_sAipRiF3FanH3K0Z',
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
